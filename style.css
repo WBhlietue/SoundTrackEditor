@@ -1,0 +1,43 @@
+.topBar {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    user-select: none;
+}
+body {
+    /* background-color: darkblue; */
+}
+.btn {
+    border: 1px black solid;
+    width: 100px;
+    height: 30px;
+    margin: 10px;
+    background-color: aqua;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    user-select: none;
+}
+.control {
+}
+#canvas {
+    background-color: rgb(48, 48, 48);
+}
+#waveform {
+    background-color: black;
+}
+#timeView {
+    font-size: 20px;
+}
+label {
+    margin: 5px;
+}
+.inputSet {
+}
+.inputSet input {
+    /* width: 50px; */
+}
+#main {
+    overflow-x: scroll;
+}
