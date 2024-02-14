@@ -1,69 +1,101 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Document</title>
-        <link rel="stylesheet" href="style.css" />
-    </head>
-    <body>
-        <div class="control">
-            <div class="topBar">
-                <div class="btn" id="PlayPause">Play or Pause</div>
-                <div class="btn" id="Reset">Reset</div>
-                <input id="audioInput" type="file" accept="audio/*" />
-                <div class="btn" id="Load">LoadAudio</div>
-                <div class="btn" id="Export">Export</div>
-                <input id="fileInput" type="file" accept="application/json" />
-                <div class="btn" id="LoadFile">LoadFile</div>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="control">
+      <div class="topBar">
+        <div class="btn" id="PlayPause">Play or Pause</div>
+        <div class="btn" id="Reset">Reset</div>
+        <label>Audio</label>
+        <input id="audioInput" type="file" accept="audio/*" />
+        <label>Image</label>
+        <input id="imageInput" type="file" accept="image/*" />
+        <input id="nameInput" type="text" placeholder="enter name" />
+        <div class="btn" id="Export">Export</div>
+        <input id="fileInput" type="file" accept="application/json" />
+        <div class="btn" id="LoadFile">LoadFile</div>
 
-                <div id="timeView"></div>
-            </div>
-            <div class="topBar">
-                <div class="inputSet">
-                    <label>Jump Step</label>
-                    <input id="step" type="number" value="0.5" />
-                </div>
-                <div class="inputSet">
-                    <label>Volume</label>
-                    <input
-                        id="volume"
-                        type="range"
-                        max="1"
-                        min="0"
-                        step="0.1"
-                        value="1"
-                    />
-                </div>
-                <div class="inputSet">
-                    <label>Speed</label>
-                    <input id="speed" type="number" value="1" />
-                </div>
-                <div class="inputSet">
-                    <label>Size</label>
-                    <input id="size" type="number" value="1" />
-                </div>
-            </div>
+        <div id="timeView"></div>
+      </div>
+      <div class="topBar">
+        <div class="inputSet">
+          <label>Jump Step</label>
+          <input id="step" type="number" value="0.5" />
         </div>
-        <div id="main">
-            <div id="waveform"></div>
-            <canvas id="canvas" height="0"></canvas>
+        <div class="inputSet">
+          <label>Volume</label>
+          <input
+            id="volume"
+            type="range"
+            max="1"
+            min="0"
+            step="0.1"
+            value="1"
+          />
         </div>
-        <div id="edit">
-            <div class="btn" id="tileDelete">Delete</div>
-            <lavel>Time:</lavel>
-            <input type="number" id="tileTime"/>
-            <div class="topBar">
-                <div class="btn" id="moveLeft">Left</div>
-                <div class="btn" id="moveRight">Right</div>
-            </div>
-            <lavel>Move Value</lavel>
-            <input type="number" id="moveValue" value="0.1"/>
+        <div class="inputSet">
+          <label>Speed</label>
+          <input id="speed" type="number" value="1" />
         </div>
-        <audio src="./click2.wav" id="audio"></audio>
-        <script src="https://unpkg.com/wavesurfer.js@7/dist/plugins/regions.min.js"></script>
-        <script src="https://unpkg.com/wavesurfer.js@7"></script>
-        <script src="main.js" type="module"></script>
-    </body>
+        <div class="inputSet">
+          <label>Size</label>
+          <input id="size" type="number" value="1" />
+        </div>
+        <div class="inputSet">
+          <label>TypeRandom</label>
+          <input id="typeRandom" type="number" value="1" />
+        </div>
+        <div class="btn" id="clear">Clear</div>
+        <div class="inputSet">
+          <label>Track</label>
+          <!-- <input id="selectNum" type="number" value="3" /> -->
+          <select id="select">
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+          </select>
+        </div>
+      </div>
+    </div>
+    <div id="main">
+      <div id="waveform"></div>
+      <canvas id="canvas" height="0"></canvas>
+    </div>
+    <div id="edit">
+      <div class="btn" id="tileDelete">Delete</div>
+      <div class="inputSet">
+        <lavel>Name:</lavel>
+        <input type="text" id="tileName" value="default" />
+      </div>
+      <div class="inputSet">
+        <lavel>Time:</lavel>
+        <input type="number" id="tileTime" />
+      </div>
+      <div class="inputSet">
+        <lavel>Type:</lavel>
+        <input type="number" id="tileType" value="-1" />
+      </div>
+      <div class="inputSet">
+        <lavel>Value:</lavel>
+        <input type="number" id="tileValue" value="0" />
+      </div>
+      <div class="topBar">
+        <div class="btn" id="moveLeft">Left</div>
+        <div class="btn" id="moveRight">Right</div>
+      </div>
+      <lavel>Move Value</lavel>
+      <input type="number" id="moveValue" value="0.1" />
+    </div>
+    <audio src="./click2.wav" id="audio"></audio>
+    <script src="https://unpkg.com/wavesurfer.js@7/dist/plugins/regions.min.js"></script>
+    <script src="https://unpkg.com/wavesurfer.js@7"></script>
+    <script src="main.js" type="module"></script>
+  </body>
 </html>
