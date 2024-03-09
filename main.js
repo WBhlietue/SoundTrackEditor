@@ -387,10 +387,10 @@ function Export() {
   const n = document.getElementById("nameInput").value;
   const jsonString = JSON.stringify(
     {
-      audio: audioBase,
-      image: imageBase,
       name: n.length == 0 ? "no name" : n,
       data: data,
+      audio: audioBase,
+      image: imageBase,
     },
     null,
     2
@@ -423,18 +423,6 @@ function DrawTile() {
     const x =
       (tile.time / wavesurfer.getDuration()) * canvas.width - tileSize[0] / 2;
     tile.x = x;
-    // const y = height * tileSize[1]
-    // if(reverse){
-    //     height--;
-    //     if(height == 0){
-    //         reverse = false;
-    //     }
-    // }else{
-    //     height++
-    //     if(height == 3){
-    //         reverse = true
-    //     }
-    // }
     const y = (canvas.height - tileSize[1]) / 2;
 
     ctx.fillStyle = tile.selected ? "#0000ff" : "#00ff00";
